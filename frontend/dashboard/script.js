@@ -31,6 +31,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
+    
     // Configuración del Drag & Drop
     setupDragAndDrop();
     
@@ -844,4 +845,20 @@ function switchSection(sectionId) {
     } else if (sectionId === "configuracion") {
         loadConfigSection();
     }
+}
+function ruta_pag (){
+    window.location.href="dashboard";
+}
+async function ruta_calculo(){
+    const a = Number(document.getElementById('num1').value);
+    const b = Number(document.getElementById('num2').value);
+
+    const res = await fetch('/api/calcular', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({a: a, b: b})
+    });
+    
+    const datos = await res.json();
+    document.getElementById('resultado').textContent = 'Resultado: ' + datos.resultado;
 }

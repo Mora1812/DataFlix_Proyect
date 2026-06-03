@@ -448,7 +448,17 @@ def get_dashboard_stats(
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Error al calcular estadísticas con Pandas: {str(e)}")
 
+# ---------------------------------------------------------------
+@app.get("/ruta")
+def ruta_pag():
+    return FileResponse(os.path.join(FRONTEND_DIR, "ruta","rutain.html")) 
+class Numeros(BaseModel):
+    a: float
+    b: float
 
+@app.post('/api/calcular')
+def calcular(nums: Numeros):
+    return {'resultado': nums.a + nums.b}
 # =========================
 # API: CATÁLOGO (PELÍCULAS / SERIES)
 # =========================

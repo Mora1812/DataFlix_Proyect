@@ -29,7 +29,7 @@
         <h2>Data<span>Flix</span></h2>
       </div>
       
-      <nav class="sidebar-menu">
+      <class class="sidebar-menu">
         <a href="#" class="menu-item" data-section="inicio">
           <i class="fa-solid fa-house"></i>
           <span>Inicio</span>
@@ -62,7 +62,15 @@
           <i class="fa-solid fa-gear"></i>
           <span>Configuración</span>
         </a>
-      </nav>
+        <button onclick="ruta_pag()">ruta</button>
+        <label for="num1">numero1:</label>
+        <input type="number"id="num1"/>
+
+        <label for="num2">numero2:</label>
+        <input type="number"id="num2"/>
+        <button onclick="window.location.href='ruta'">Calcular</button>
+        
+</nav>
       
       <div class="sidebar-footer">
         <a href="#" class="menu-item logout-btn" onclick="logout()">
